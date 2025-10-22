@@ -1,0 +1,9 @@
+replicaCount: 1
+
+image:
+  repository: "pinkmelon/hrd-portal"
+  tag: "1"
+
+service:
+  type: LoadBalancer
+  port: 9091
