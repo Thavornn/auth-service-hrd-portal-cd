@@ -21,11 +21,10 @@ spec:
             - containerPort: {{ .Values.service.port }}
           env:
             - name: SPRING_DATASOURCE_URL
-              value: "jdbc:postgresql://auth-service-postgres-service:5433/authServiceDb"
+              value: "jdbc:postgresql://128.199.251.237:5435/user_db"
             - name: SPRING_DATASOURCE_USERNAME
-              value: "authServiceUser"
+              value: "user_db"
             - name: SPRING_DATASOURCE_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: auth-service-postgres-secret
-                  key: POSTGRES_PASSWORD
+              value: "ZnS4aBoQC-_T+'\"XJI"
+
+        
