@@ -2,8 +2,10 @@ replicaCount: 1
 
 image:
   repository: "pinkmelon/hrd-portal"
-  tag: "13"
+  tag: "35"
 
 service:
   type: LoadBalancer
   port: 8081
+
+revisionHistoryLimit: 3

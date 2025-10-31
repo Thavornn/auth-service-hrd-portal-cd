@@ -6,6 +6,7 @@ metadata:
     app: {{ .Chart.Name }}
 spec:
   replicas: {{ .Values.replicaCount }}
+  revisionHistoryLimit: {{ .Values.revisionHistoryLimit }}
   selector:
     matchLabels:
       app: {{ .Chart.Name }}
@@ -27,4 +28,31 @@ spec:
             - name: SPRING_DATASOURCE_PASSWORD
               value: "ZnS4aBoQC-_T+'\"XJI"
 
-        
+            # Keycloak for authentication
+            - name: KEYCLOAK_URL
+              value: "https://keycloak.hrdportal.systems"
+
+            # Redis for cache or sessions
+            - name: REDIS_HOST
+              value: "redis.redis.svc.cluster.local"
+            - name: REDIS_PORT
+              value: "6379"
+
+            # Kafka for message streaming
+            - name: KAFKA_BOOTSTRAP_SERVERS
+              value: "kafka-svc.kafka.svc.cluster.local:9092"
+              
+            - name: EUREKA_CLIENT_REGISTER_WITH_EUREKA
+              value: "false"
+            - name: EUREKA_CLIENT_FETCH_REGISTRY
+              value: "false"
+
+            - name: SPRING_PROFILES_ACTIVE
+              value: "prod"
+
+            - name: SPRING_CONFIG_IMPORT
+              value: "optional:configserver:http://128.199.251.237:8888"
+
+            - name: SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUER_URI
+              value: "https://keycloak.hrdportal.systems/realms/hrd-portal"
+            
