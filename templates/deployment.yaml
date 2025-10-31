@@ -33,9 +33,9 @@ spec:
               value: "https://keycloak.hrdportal.systems"
 
             # Redis for cache or sessions
-            - name: REDIS_HOST
+            - name: SPRING_DATA_REDIS_HOST
               value: "redis.redis.svc.cluster.local"
-            - name: REDIS_PORT
+            - name: SPRING_DATA_REDIS_PORT
               value: "6379"
             - name: SPRING_CACHE_TYPE
               value: "redis"
