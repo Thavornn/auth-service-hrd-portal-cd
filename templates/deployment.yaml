@@ -37,6 +37,8 @@ spec:
               value: "redis.redis.svc.cluster.local"
             - name: REDIS_PORT
               value: "6379"
+            - name: SPRING_CACHE_TYPE
+              value: "redis"
 
             # Kafka for message streaming
             - name: KAFKA_BOOTSTRAP_SERVERS
