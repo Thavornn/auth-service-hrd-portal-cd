@@ -20,41 +20,6 @@ spec:
           image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
           ports:
             - containerPort: {{ .Values.service.port }}
-          env:
-            - name: SPRING_DATASOURCE_URL
-              value: "jdbc:postgresql://128.199.251.237:5435/user_db"
-            - name: SPRING_DATASOURCE_USERNAME
-              value: "user_db"
-            - name: SPRING_DATASOURCE_PASSWORD
-              value: "ZnS4aBoQC-_T+'\"XJI"
-
-            # Keycloak for authentication
-            - name: KEYCLOAK_URL
-              value: "https://keycloak.hrdportal.systems"
-
-            # Redis for cache or sessions
-            - name: SPRING_DATA_REDIS_HOST
-              value: "redis.redis.svc.cluster.local"
-            - name: SPRING_DATA_REDIS_PORT
-              value: "6379"
-            - name: SPRING_CACHE_TYPE
-              value: "redis"
-
-            # Kafka for message streaming
-            - name: KAFKA_BOOTSTRAP_SERVERS
-              value: "kafka-svc.kafka.svc.cluster.local:9092"
-              
-            - name: EUREKA_CLIENT_REGISTER_WITH_EUREKA
-              value: "false"
-            - name: EUREKA_CLIENT_FETCH_REGISTRY
-              value: "false"
-
-            - name: SPRING_PROFILES_ACTIVE
-              value: "prod"
-
-            - name: SPRING_CONFIG_IMPORT
-              value: "optional:configserver:http://128.199.251.237:8888"
-
-            - name: SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUER_URI
-              value: "https://keycloak.hrdportal.systems/realms/hrd-portal"
-            
+          envFrom:
+            - configMapRef:
+                name: {{ .Values.configMapName }}

@@ -9,3 +9,6 @@ service:
   port: 8081
 
 revisionHistoryLimit: 3
+
+# Add this
+configMapName: auth-service-config
