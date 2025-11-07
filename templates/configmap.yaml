@@ -26,5 +26,5 @@ data:
   KEYCLOAK_SERVER_URL: "https://keycloak.hrdportal.systems"
   KEYCLOAK_REALM: "hrd-portal"
 
-  SPRING_CLOUD_OPENFEIGN_CLIENT_CONFIG_CLASSROOM_SERVICE_URL: "https://classroom-service.classroom-service.svc.cluster.local:8085"
-  SPRING_CLOUD_OPENFEIGN_CLIENT_CONFIG_USER_MANAGEMENT_SERVICE_URL: "http://128.199.251.237:8086"
+  SPRING_CLOUD_OPENFEIGN_CLIENT_CONFIG_CLASSROOM_SERVICE_URL: "http://classroom-service.hrd-portal.svc.cluster.local:8082"
+  SPRING_CLOUD_OPENFEIGN_CLIENT_CONFIG_USER_MANAGEMENT_SERVICE_URL: "http://user-management-service.hrd-portal.svc.cluster.local:8083"
