@@ -14,10 +14,11 @@ data:
   SPRING_DATA_REDIS_PORT: "6379"
   SPRING_CACHE_TYPE: "redis"
 
-  KAFKA_BOOTSTRAP_SERVERS: "kafka-svc.kafka.svc.cluster.local:9092"
+  # KAFKA_BOOTSTRAP_SERVERS: "kafka-svc.kafka.svc.cluster.local:9092"
+  # KAFKA_PRODUCER_BOOTSTRAP_SERVERS: "kafka-svc.kafka.svc.cluster.local:9092"
+  # KAFKA_CONSUMER_BOOTSTRAP_SERVERS: "kafka-svc.kafka.svc.cluster.local:9092"
 
-  EUREKA_CLIENT_REGISTER_WITH_EUREKA: "false"
-  EUREKA_CLIENT_FETCH_REGISTRY: "false"
+  KAFKA_URL: "kafka-svc.kafka.svc.cluster.local:9092"
 
   SPRING_PROFILES_ACTIVE: "prod"
 
@@ -26,5 +27,9 @@ data:
   KEYCLOAK_SERVER_URL: "https://keycloak.hrdportal.systems"
   KEYCLOAK_REALM: "hrd-portal"
 
-  SPRING_CLOUD_OPENFEIGN_CLIENT_CONFIG_CLASSROOM_SERVICE_URL: "http://classroom-service.hrd-portal.svc.cluster.local:8082"
-  SPRING_CLOUD_OPENFEIGN_CLIENT_CONFIG_USER_MANAGEMENT_SERVICE_URL: "http://user-management-service.hrd-portal.svc.cluster.local:8083"
+  EUREKA_CLIENT_REGISTER_WITH_EUREKA: "false"
+  EUREKA_CLIENT_FETCH_REGISTRY: "false"
+
+  SPRING_CLOUD_OPENFEIGN_CLIENT_CONFIG_CLASSROOMSERVICE_URL: "http://classroom-service.hrd-portal.svc.cluster.local:8082"
+  SPRING_CLOUD_OPENFEIGN_CLIENT_CONFIG_USERMANAGEMENTSERVICE_URL: "http://user-management-service.hrd-portal.svc.cluster.local:8083"
+  SPRING_CONFIG_IMPORT: "configserver:http://128.199.251.237:8888"
