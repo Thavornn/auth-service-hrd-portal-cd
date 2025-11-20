@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: "pinkmelon/hrd-portal"
-  tag: 90
+  tag: 92
 
 service:
   type: LoadBalancer
