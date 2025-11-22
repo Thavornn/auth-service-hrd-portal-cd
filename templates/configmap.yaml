@@ -4,12 +4,11 @@ metadata:
   name: {{ .Values.configMapName }}
   namespace: {{ .Release.Namespace }}
 data:
-  SPRING_DATASOURCE_URL: "jdbc:postgresql://128.199.251.237:5435/user_db"
+  SPRING_DATASOURCE_URL: "jdbc:postgresql://96.9.81.188:5435/user_db"
   SPRING_DATASOURCE_USERNAME: "user_db"
   SPRING_DATASOURCE_PASSWORD: 'ZnS4aBoQC-_T+''"XJI'
 
-  SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUER_URI: "https://keycloak.hrdportal.systems/realms/hrd-portal"
-
+  SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUER_URI: "https://keycloak-new.hrdportal.systems/realms/hrd-portal"
   SPRING_DATA_REDIS_HOST: "redis.redis.svc.cluster.local"
   SPRING_DATA_REDIS_PORT: "6379"
   SPRING_CACHE_TYPE: "redis"
