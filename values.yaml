@@ -10,5 +10,5 @@ service:
 
 revisionHistoryLimit: 3
 
-# Add this
+# Add this for ConfigMap name
 configMapName: auth-service-config
