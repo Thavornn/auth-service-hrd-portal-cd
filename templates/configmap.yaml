@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ .Values.configMapName }}
-  namespace: {{ .Release.Namespace }}
+  name: { { .Values.configMapName } }
+  namespace: { { .Release.Namespace } }
 data:
-  SPRING_DATASOURCE_URL: "jdbc:postgresql://96.9.81.188:5435/user_db"
+  SPRING_DATASOURCE_URL: "jdbc:postgresql://146.190.105.198:5435/user_db"
   SPRING_DATASOURCE_USERNAME: "user_db"
   SPRING_DATASOURCE_PASSWORD: 'ZnS4aBoQC-_T+''"XJI'
 
@@ -31,4 +31,4 @@ data:
 
   SPRING_CLOUD_OPENFEIGN_CLIENT_CONFIG_CLASSROOMSERVICE_URL: "http://classroom-service.hrd-portal.svc.cluster.local:8082"
   SPRING_CLOUD_OPENFEIGN_CLIENT_CONFIG_USERMANAGEMENTSERVICE_URL: "http://user-management-service.hrd-portal.svc.cluster.local:8083"
-  SPRING_CONFIG_IMPORT: "configserver:http://96.9.81.188:8888"
+  SPRING_CONFIG_IMPORT: "configserver:http://146.190.105.198:8888"
