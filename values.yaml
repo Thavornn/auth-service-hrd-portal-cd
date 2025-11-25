@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: "pinkmelon/hrd-portal"
-  tag: 98
+  tag: 100
 
 service:
   type: NodePort
